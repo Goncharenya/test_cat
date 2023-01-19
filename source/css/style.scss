@@ -1,3 +1,71 @@
+$lightGrey: #666666;
+$darkGrey: #242424;
+$whiteFontColor: #ffffff;
+
+
+@font-face {
+  font-family: ExoThin;
+  src: url('../fonts/ExoThin.otf');
+  font-weight: 100;
+  font-style: normal;
+}
+
 body {
-  background: yellow;
+  background: $darkGrey;
+  font-family: ExoThin, sans-serif;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__content {
+  background: url("../img/main_bg.jpg") no-repeat;
+}
+
+.main__title {
+  font-size: 2.25rem;
+  color: $whiteFontColor;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: max-content;
+  gap: 80px;
+  padding: 0 80px 80px;
+}
+
+.cards__item {
+  width: 320px;
+  height: 500px;
+  background-color: #ffffff;
+  background-image: url("../img/card_bg.png");
+  background-repeat: no-repeat;
+  background-position: -30px 165%;
+  border-radius: 12px;
+  border: 4px solid #1698D9;
+
+  &::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    
+  }
+}
+
+.cards__slogan {
+  font-weight: 400;
+  color: $lightGrey;
+}
+
+.cards__title {
+  font-size: 3rem;
 }
